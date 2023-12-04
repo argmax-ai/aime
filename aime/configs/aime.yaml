@@ -1,0 +1,74 @@
+defaults:
+  - _self_
+  - env: ???
+  - world_model: rssmo
+
+model_name: ???
+demonstration_dataset_name: ???
+
+freeze_model: True
+random_policy: True
+num_expert_trajectories: 100
+algo_name: aime
+seed: 42
+log_name: "${env.name}/${environment_setup}/${algo_name}/${demonstration_dataset_name}/${model_name}/${num_expert_trajectories}/use_idm=${use_idm}/${world_model.idm_mode}/kl_only=${kl_only}"
+horizon: 50
+batch_size: 50
+batch_per_epoch: 100
+epoch: 500
+test_period: 10
+num_test_trajectories: 10
+final_num_test_trajectories: 100
+
+use_fp16: false
+model_lr: 3e-4
+grad_clip: 100.0
+
+environment_setup: visual
+
+use_idm: False
+kl_only: False
+
+env:
+  action_repeat: 2
+  render: False
+
+world_model:
+  nll_reweight: dim_wise
+  idm_mode: detach
+
+  min_std: null
+
+  kl_scale: 1.0
+  free_nats: 0.0
+  kl_rebalance: null
+
+  encoders:
+    tabular:
+      name: identity
+    visual:
+      name: cnn_ha
+
+  decoders:
+    tabular:
+      name: smlp
+      hidden_size: 128
+      hidden_layers: 2
+    visual:
+      name: cnn_ha
+
+  probes:
+    tabular:
+      name: dmlp
+      hidden_size: 128
+      hidden_layers: 2
+    visual: 
+      name: cnn_ha
+
+policy:
+  hidden_size: 128
+  hidden_layers: 2
+
+vnet:
+  hidden_size: 128
+  hidden_layers: 2

@@ -1,0 +1,16 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: cheetah
+task: run
+supported_tasks: [run, runbackward, flip, flipbackward]
+action_repeat: 2
+sensors:
+  position:
+    modility: tabular
+    order: first
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first

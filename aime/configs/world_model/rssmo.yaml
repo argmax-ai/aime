@@ -1,0 +1,45 @@
+name: rssmo
+state_dim: [512, 30]
+hidden_size: 512
+hidden_layers: 2 # this is mainly for the idm in this model
+norm: ln
+
+nll_reweight: none
+idm_mode: detach
+
+min_std: 0.1
+
+kl_scale: 1.0
+free_nats: 1.0
+kl_rebalance: 0.8
+
+encoders:
+  tabular:
+    name: mlp
+    hidden_size: 512
+    hidden_layers: 2
+    hidden_activation: swish
+    norm: ln
+    have_head: false
+  visual:
+    name: cnn_ha
+
+decoders:
+  tabular:
+    name: dmlp
+    hidden_size: 512
+    hidden_layers: 2
+    hidden_activation: swish
+    norm: ln
+  visual:
+    name: cnn_ha
+
+probes:
+  tabular:
+    name: dmlp
+    hidden_size: 512
+    hidden_layers: 2
+    hidden_activation: swish
+    norm: ln
+  visual: 
+    name: cnn_ha

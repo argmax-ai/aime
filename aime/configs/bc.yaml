@@ -1,0 +1,41 @@
+defaults:
+  - _self_
+  - env: ???
+
+demonstration_dataset_name: ??
+
+algo_name: bc
+seed: 42
+log_name: "${env.name}/${environment_setup}/${demonstration_dataset_name}/${algo_name}/${seed}"
+stack: 5
+batch_size: 50
+train_validation_split_ratio: 0.7
+num_expert_trajectories: 100
+num_test_trajectories: 100
+patience: 3
+min_idm_epoch: 50
+min_policy_epoch: 50
+
+idm_lr : 1e-3
+policy_lr: 1e-3
+grad_clip: 100.0
+
+environment_setup: lpomdp
+
+env:
+  action_repeat: 2
+  render: False
+
+encoders:
+  tabular:
+    name: identity
+  visual:
+    name: cnn_ha
+
+idm:
+  hidden_size: 128
+  hidden_layers: 2
+
+policy:
+  hidden_size: 128
+  hidden_layers: 2

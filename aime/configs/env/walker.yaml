@@ -1,0 +1,19 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: walker
+task: walk
+supported_tasks: [stand, walk, run, walkbackward, runbackward, flip, flipbackward, jump]
+action_repeat: 2
+sensors:
+  orientations:
+    modility: tabular
+    order: first
+  height:
+    modility: tabular 
+    order: first
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first

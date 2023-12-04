@@ -1,0 +1,28 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: humanoid
+task: stand
+supported_tasks: [stand, walk, run]
+action_repeat: 2
+sensors:
+  joint_angles:
+    modility: tabular
+    order: first
+  head_height:
+    modility: tabular 
+    order: first
+  extremities:
+    modility: tabular 
+    order: first    
+  torso_vertical:
+    modility: tabular 
+    order: first
+  com_velocity:
+    modility: tabular
+    order: second
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first

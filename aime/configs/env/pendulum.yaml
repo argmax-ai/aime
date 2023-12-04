@@ -1,0 +1,16 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: pendulum
+task: swingup
+supported_tasks: [swingup]
+action_repeat: 2
+sensors:
+  orientation:
+    modility: tabular
+    order: first
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first

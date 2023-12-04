@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+]
+exclude = [
+    ".git",
+    "venv/*",
+]
+ignore = [
+    # pyflakes
+    "F403",
+]
+target-version = "py38"

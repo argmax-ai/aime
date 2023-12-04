@@ -1,0 +1,16 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: ball_in_cup
+task: catch
+supported_tasks: [catch]
+action_repeat: 4
+sensors:
+  position:
+    modility: tabular
+    order: first
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first

@@ -1,0 +1,15 @@
+Transparenz und offene Kommunikation sind innerhalb und außerhalb der Volkswagen AG für uns selbstverständlich. Wichtige Informationen über die Volkswagen AG, die Möglichkeiten der Kontaktaufnahme sowie zum Datenschutz finden Sie hier.
+
+I. Informationen über die Volkswagen AG: siehe
+
+https://www.volkswagenag.com/de/meta/provider-identification.html
+
+II. Information über die Erhebung personenbezogener Daten
+
+(1) Wir stellen Ihnen auf der Plattform der Firma GitHub, Inc., 88 Colin P Kelly Jr Street, San Francisco, CA 94107, USA, ein Repository zur Verfügung, über das u.a. Softwarebibliotheken der VOLKSWAGEN AG dokumentiert und zum Download angeboten werden. Im Folgenden informieren wir über die Erhebung personenbezogener Daten bei Nutzung unseres Repository.
+
+(2) Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind, z.B. E-Mail-Adresse, Nutzerprofil u.ä.. Die Erhebung personenbezogener Daten erfolgt bei Nutzung unseres Repository allein durch die Firma GitHub.
+
+(3) Wir erhalten von der Firma GitHub lediglich anonymisierte Informationen, also Daten ohne Personenbezug. Diese Informationen betreffen die Aktivitäten der Nutzer von GitHub bzw. unseres Repository. So übermittelt uns GitHub beispielsweise Statistiken über die Nutzung unserer Open-Source-Projekte, etwa über die Anzahl der „Stars“ (Lesezeichen) in Bezug auf unser Repository.
+
+(4) Verantwortlicher für die Datenerhebung und damit Ansprechpartner für Datenschutzanfragen und Betroffenenrechte ist allein GitHub. Wir verweisen insoweit auf die GitHub Privacy Notice unter https://help.github.com/articles/github-privacy-statement/#how-we-share-the-information-we-collect

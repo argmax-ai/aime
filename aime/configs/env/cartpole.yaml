@@ -1,0 +1,16 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: cartpole
+task: swingup
+supported_tasks: [swingup, balance]
+action_repeat: 8
+sensors:
+  position:
+    modility: tabular
+    order: first
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first

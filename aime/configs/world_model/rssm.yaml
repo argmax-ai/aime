@@ -1,0 +1,4 @@
+name: rssm
+state_dim: [512, 128]
+hidden_size: 128
+hidden_layers: 2

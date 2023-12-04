@@ -1,0 +1,53 @@
+defaults:
+  - _self_
+  - env: ??
+  - world_model: rssmo
+
+seed: 42
+embodiment_dataset_name: ??
+log_name: "${embodiment_dataset_name}/${environment_setup}/${world_model.name}/${seed}"
+horizon: 50
+batch_size: 50
+batch_per_epoch: 100
+epoch: 1000
+use_reward: false
+
+pretrained_model_name: null
+
+use_fp16: false
+model_lr : 3e-4
+grad_clip: 100.0
+
+environment_setup: visual
+
+world_model:
+  nll_reweight: dim_wise
+  idm_mode: detach
+
+  min_std: null
+
+  kl_scale: 1.0
+  free_nats: 0.0
+  kl_rebalance: null
+
+  encoders:
+    tabular:
+      name: identity
+    visual:
+      name: cnn_ha
+
+  decoders:
+    tabular:
+      name: smlp
+      hidden_size: 128
+      hidden_layers: 2
+    visual:
+      name: cnn_ha
+
+  probes:
+    tabular:
+      name: dmlp
+      hidden_size: 128
+      hidden_layers: 2
+    visual: 
+      name: cnn_ha

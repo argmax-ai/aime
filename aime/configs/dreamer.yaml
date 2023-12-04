@@ -1,0 +1,74 @@
+defaults:
+  - _self_
+  - env: ???
+  - world_model: rssmo
+
+algo_name: dreamer
+seed: 42
+log_name: "${env.name}/${environment_setup}/${algo_name}/${world_model.name}/${seed}"
+horizon: 50
+batch_size: 50
+batch_per_epoch: 100
+epoch: 995
+prefill: 5
+pretraining_iterations: 100
+epsilon: 0.0
+gamma: 0.99
+lambda: 0.95
+imagine_horizon: 15
+policy_entropy_scale: 1e-4
+
+pretrained_model_name: null
+freeze_pretrained_parameters: true
+
+use_fp16: false
+model_lr : 3e-4
+policy_lr: 8e-5
+vnet_lr : 8e-5
+grad_clip: 100.0
+
+environment_setup: lpomdp
+
+env:
+  action_repeat: 2
+  render: False
+
+world_model:
+  nll_reweight: dim_wise
+  idm_mode: detach
+
+  min_std: null
+
+  kl_scale: 1.0
+  free_nats: 0.0
+  kl_rebalance: null
+
+  encoders:
+    tabular:
+      name: identity
+    visual:
+      name: cnn_ha
+
+  decoders:
+    tabular:
+      name: smlp
+      hidden_size: 128
+      hidden_layers: 2
+    visual:
+      name: cnn_ha
+
+  probes:
+    tabular:
+      name: dmlp
+      hidden_size: 128
+      hidden_layers: 2
+    visual: 
+      name: cnn_ha
+
+policy:
+  hidden_size: 128
+  hidden_layers: 2
+
+vnet:
+  hidden_size: 128
+  hidden_layers: 2

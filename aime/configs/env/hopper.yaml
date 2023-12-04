@@ -1,0 +1,19 @@
+class: dmc
+name: "${env.embodiment}-${env.task}"
+embodiment: hopper
+task: stand
+supported_tasks: [stand, hop]
+action_repeat: 2
+sensors:
+  position:
+    modility: tabular
+    order: first
+  touch:
+    modility: tabular 
+    order: first
+  velocity:
+    modility: tabular
+    order: second
+  image:
+    modility: visual
+    order: first
